@@ -10,6 +10,14 @@ public class BaseEnemyScript : MonoBehaviour
     void Start()
     {
         playerReference = FindObjectOfType<Player>();  
+        if (playerReference != null)
+        {
+            Debug.Log("Player object found: " + playerReference.name);
+        }
+        else
+        {
+            Debug.LogWarning("Player object not found!");
+        }
     }
 
     // Update is called once per frame
@@ -19,9 +27,10 @@ public class BaseEnemyScript : MonoBehaviour
 
         if (playerReference)
         {
-            if (Vector3.Distance(transform.position, playerReference.transform.position) < 5)
+            if (Vector3.Distance(transform.position, playerReference.transform.position) < 1)
             {
                 Debug.Log("Player is close");
+
             }
         }
     }
