@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HydraScript : MonoBehaviour
+public class HydraScript : TurretScript
 {
     // Start is called before the first frame update
     void Start()

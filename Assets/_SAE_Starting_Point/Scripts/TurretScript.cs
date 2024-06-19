@@ -13,6 +13,7 @@ public class TurretScript : BaseEnemyScript
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Hello World!.");
         ShootPlayer();
     }
 
