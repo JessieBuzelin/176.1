@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnDamageZoneOnTurret : SimpleDamageZone
 {
+
+  
     public GameObject player;
     public GameObject projectilePrefab;
     public Transform firePoint;
@@ -19,22 +21,28 @@ public class SpawnDamageZoneOnTurret : SimpleDamageZone
 
     void Update()
     {
-        // Calculate direction towards the player
-        Vector3 directionToPlayer = player.transform.position - transform.position;
-        Quaternion rotationToPlayer = Quaternion.LookRotation(directionToPlayer);
-
-        // Rotate enemy to face the player (optional)
-        transform.rotation = rotationToPlayer;
-
-        // Countdown timer
-        shootTimer -= Time.deltaTime;
-
-        shootTimer -= Time.deltaTime;
-
-        if (shootTimer <= 0)
+        
+        if (player != null)
         {
-            Shoot();
-            shootTimer = shootInterval;
+            
+                // Calculate direction towards the player
+              //  Vector3 directionToPlayer = player.transform.position - transform.position;
+           // Quaternion rotationToPlayer = Quaternion.LookRotation(directionToPlayer);
+
+            // Rotate enemy to face the player (optional)
+          //  transform.rotation = rotationToPlayer;
+
+            // Countdown timer
+          //  shootTimer -= Time.deltaTime;
+
+            shootTimer -= Time.deltaTime;
+
+            if (shootTimer <= 0)
+            {
+                Shoot();
+                shootTimer = shootInterval;
+            }
+
         }
     }
 
