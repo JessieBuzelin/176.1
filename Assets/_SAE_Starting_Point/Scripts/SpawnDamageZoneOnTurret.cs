@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnDamageZoneOnTurret : SimpleDamageZone
+public class SpawnDamageZoneOnTurret : MonoBehaviour
 {
 
   
@@ -37,14 +37,14 @@ public class SpawnDamageZoneOnTurret : SimpleDamageZone
         {
             
                 // Calculate direction towards the player
-              //  Vector3 directionToPlayer = player.transform.position - transform.position;
-           // Quaternion rotationToPlayer = Quaternion.LookRotation(directionToPlayer);
+                Vector3 directionToPlayer = player.transform.position - transform.position;
+            Quaternion rotationToPlayer = Quaternion.LookRotation(directionToPlayer);
 
             // Rotate enemy to face the player (optional)
-          //  transform.rotation = rotationToPlayer;
+            transform.rotation = rotationToPlayer;
 
             // Countdown timer
-          //  shootTimer -= Time.deltaTime;
+          
 
             shootTimer -= Time.deltaTime;
 
