@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SimpleDamageZone : MonoBehaviour
 {
+    
     [SerializeField] float damage = 20;
 
     private void OnTriggerEnter(Collider other)
@@ -14,4 +15,5 @@ public class SimpleDamageZone : MonoBehaviour
             other.GetComponent<Health>().TakeDamage(damage,gameObject);
         }
     }
+    
 }
