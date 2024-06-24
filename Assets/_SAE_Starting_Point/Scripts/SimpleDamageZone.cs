@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.FPS.Game;
 using UnityEngine;
 
-public class SimpleDamageZone : HydraScript
+public class SimpleDamageZone : MonoBehaviour
 {
     [SerializeField] float damage = 20;
 
