@@ -7,7 +7,7 @@ public class SpawnDamageZoneOnTurret : SimpleDamageZone
 
   
     public GameObject player;
-    public GameObject projectilePrefab;
+    public GameObject DamageZone;
     public Transform firePoint;
     public float shootInterval = 2f;  // Time interval between shots
     public float projectileSpeed = 10f;
@@ -17,6 +17,17 @@ public class SpawnDamageZoneOnTurret : SimpleDamageZone
     void Start()
     {
         shootTimer = shootInterval;
+    }
+
+    void Shoot()
+    {
+        GameObject projectile = Instantiate(DamageZone, firePoint.position, firePoint.rotation);
+        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+
+        if (rb != null)
+        {
+            rb.velocity = firePoint.forward * projectileSpeed;
+        }
     }
 
     void Update()
@@ -46,14 +57,5 @@ public class SpawnDamageZoneOnTurret : SimpleDamageZone
         }
     }
 
-    void Shoot()
-    {
-        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-        Rigidbody rb = projectile.GetComponent<Rigidbody>();
-
-        if (rb != null)
-        {
-            rb.velocity = firePoint.forward * projectileSpeed;
-        }
-    }
+    
 }

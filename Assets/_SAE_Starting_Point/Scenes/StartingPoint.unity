@@ -419,12 +419,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 308455147}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &310736165 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7886326314632062833, guid: e29d43f43cc5d82499dd9926e01847d3,
-    type: 3}
-  m_PrefabInstance: {fileID: 252843183}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330009870 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7253983127304857660, guid: 761cdc9e4e883334cbdcea062d0befa7,
@@ -988,6 +982,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5035642871227140182, guid: a7566d85b04856b42a956c9b162ee747,
     type: 3}
   m_PrefabInstance: {fileID: 1027148984}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1037370717 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7886326314632062831, guid: e29d43f43cc5d82499dd9926e01847d3,
+    type: 3}
+  m_PrefabInstance: {fileID: 252843183}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1058203566 stripped
 Transform:
@@ -1623,10 +1623,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4e8098d46b13304a8bff6836cd16a05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLocation: {fileID: 0}
+  lookSpeed: 10
+  player: {fileID: 330009870}
   damage: 20
   player: {fileID: 330009870}
-  projectilePrefab: {fileID: 1420976816}
-  firePoint: {fileID: 310736165}
+  DamageZone: {fileID: 1420976816}
+  firePoint: {fileID: 1037370717}
   shootInterval: 2
   projectileSpeed: 50
 --- !u!114 &1703939335
@@ -5376,6 +5379,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DamageZone
       objectReference: {fileID: 0}
+    - target: {fileID: 8642180216007319178, guid: b6a3a335721d2204b9e5cbf52a49e8a5,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 330009883}
+    - target: {fileID: 8642180216007319178, guid: b6a3a335721d2204b9e5cbf52a49e8a5,
+        type: 3}
+      propertyPath: playerLocation
+      value: 
+      objectReference: {fileID: 330009883}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
