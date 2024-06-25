@@ -19,14 +19,8 @@ public class TurretScript : BaseEnemyScript
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
-        Debug.Log("Hello World!.");
-        ShootPlayer();
-=======
         ShootPlayer(); 
         LooksAtPlayer(playerLocation.position);
-
->>>>>>> feature/turretai
     }
 protected void LooksAtPlayer(Vector3 playerLocation)
 {
