@@ -36,15 +36,9 @@ public class SpawnDamageZoneOnTurret : MonoBehaviour
         if (player != null)
         {
             
-                // Calculate direction towards the player
-                Vector3 directionToPlayer = player.transform.position - transform.position;
-            Quaternion rotationToPlayer = Quaternion.LookRotation(directionToPlayer);
-
-            // Rotate enemy to face the player (optional)
-            transform.rotation = rotationToPlayer;
+               
 
             // Countdown timer
-          
 
             shootTimer -= Time.deltaTime;
 

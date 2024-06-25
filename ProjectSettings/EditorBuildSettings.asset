@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_SAE_Starting_Point/Scenes/StartingPoint.unity
-    guid: 6734b798a5540bb4eac20defe0998950
+    path: Assets/Scenes/StartingPoint.unity
+    guid: 3354656c0eafd28449090b319b99ac96
   - enabled: 1
     path: Assets/Unity Base Project/FPS/Scenes/IntroMenu.unity
     guid: 56e3faabc5bb30f49a68bb8f1292f988

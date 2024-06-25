@@ -25,7 +25,7 @@ public class TurretScript : BaseEnemyScript
 protected void LooksAtPlayer(Vector3 playerLocation)
 {
 
-        if (Vector3.Distance(transform.position, playerLocation) < 10) 
+        if (Vector3.Distance(transform.position, playerLocation) < 30) 
         {
             Quaternion targetRotation = Quaternion.LookRotation(playerLocation - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, lookSpeed * Time.deltaTime);
