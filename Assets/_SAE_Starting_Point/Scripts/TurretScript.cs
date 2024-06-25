@@ -6,14 +6,14 @@ public class TurretScript : BaseEnemyScript
 {
     [SerializeField] protected Transform playerLocation;
     [SerializeField] private float lookSpeed = 10f;
-
+    public Transform player; // This will hold a reference to the player's Transform component
     // Start is called before the first frame update
     void Start()
     {
         playerReference = FindObjectOfType<Player>();
     }
 
-    public Transform player; // This will hold a reference to the player's Transform component
+    
 
 
     // Update is called once per frame
