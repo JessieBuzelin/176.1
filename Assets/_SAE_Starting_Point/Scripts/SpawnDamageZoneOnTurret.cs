@@ -2,21 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnDamageZoneOnTurret : SimpleDamageZone
+public class SpawnDamageZoneOnTurret : MonoBehaviour
 {
 
   
     public GameObject player;
-    public GameObject projectilePrefab;
+    public GameObject DamageZone;
     public Transform firePoint;
     public float shootInterval = 2f;  // Time interval between shots
-    public float projectileSpeed = 10f;
+    public float projectileSpeed = 5f;
 
     private float shootTimer;
 
     void Start()
     {
         shootTimer = shootInterval;
+    }
+
+    void Shoot()
+    {
+        GameObject projectile = Instantiate(DamageZone, firePoint.position, firePoint.rotation);
+        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+
+        if (rb != null)
+        {
+            rb.velocity = firePoint.forward * projectileSpeed;
+        }
     }
 
     void Update()
@@ -26,14 +37,14 @@ public class SpawnDamageZoneOnTurret : SimpleDamageZone
         {
             
                 // Calculate direction towards the player
-              //  Vector3 directionToPlayer = player.transform.position - transform.position;
-           // Quaternion rotationToPlayer = Quaternion.LookRotation(directionToPlayer);
+                Vector3 directionToPlayer = player.transform.position - transform.position;
+            Quaternion rotationToPlayer = Quaternion.LookRotation(directionToPlayer);
 
             // Rotate enemy to face the player (optional)
-          //  transform.rotation = rotationToPlayer;
+            transform.rotation = rotationToPlayer;
 
             // Countdown timer
-          //  shootTimer -= Time.deltaTime;
+          
 
             shootTimer -= Time.deltaTime;
 
@@ -46,14 +57,5 @@ public class SpawnDamageZoneOnTurret : SimpleDamageZone
         }
     }
 
-    void Shoot()
-    {
-        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-        Rigidbody rb = projectile.GetComponent<Rigidbody>();
-
-        if (rb != null)
-        {
-            rb.velocity = firePoint.forward * projectileSpeed;
-        }
-    }
+    
 }
