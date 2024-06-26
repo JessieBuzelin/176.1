@@ -22,12 +22,12 @@ public class TurretScript : BaseEnemyScript
         ShootPlayer(); 
         LooksAtPlayer(playerLocation.position);
     }
-protected void LooksAtPlayer(Vector3 playerLocation)
+protected void LooksAtPlayer(Vector3 newPlayerLocation)
 {
 
-        if (Vector3.Distance(transform.position, playerLocation) < 30) 
+        if (Vector3.Distance(transform.position, newPlayerLocation) < 30) 
         {
-            Quaternion targetRotation = Quaternion.LookRotation(playerLocation - transform.position);
+            Quaternion targetRotation = Quaternion.LookRotation(newPlayerLocation - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, lookSpeed * Time.deltaTime);
         }
 

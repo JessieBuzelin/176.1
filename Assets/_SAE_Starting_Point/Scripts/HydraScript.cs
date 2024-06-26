@@ -18,7 +18,7 @@ public class HydraScript : TurretScript
     void Update()
     {
         ShootPlayer();
-        LooksAtPlayer(playerLocation.position);
+        LooksAtPlayer(playerReference.transform.position);
 
         if (player != null)
         {

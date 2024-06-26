@@ -11,7 +11,6 @@ public class SpawnDamageZoneOnTurret : MonoBehaviour
     public Transform firePoint;
     public float shootInterval = 2f;  // Time interval between shots
     public float projectileSpeed = 5f;
-
     private float shootTimer;
 
     void Start()
